@@ -798,7 +798,7 @@ func (g *Generator) generateFieldMethods(s *parser.Struct) string {
 		titleName := strings.Title(field.Name)
 
 		contents += g.generateFieldComment(field, tab)
-		contents += fmt.Sprintf(tab+"%s get %s => this._%s;\n\n", dartType, fName, fName)
+		contents += fmt.Sprintf(tab+"%s get %s => this._%s%s;\n\n", dartType, fName, fName, g.generateInitValue(field))
 		contents += g.generateFieldComment(field, tab)
 		contents += fmt.Sprintf(tab+"set %s(%s %s) {\n", fName, dartType, fName)
 		contents += fmt.Sprintf(tabtab+"this._%s = %s;\n", fName, fName)
@@ -822,7 +822,7 @@ func (g *Generator) generateFieldMethods(s *parser.Struct) string {
 	for _, field := range s.Fields {
 		contents += fmt.Sprintf(tabtabtab+"case %s:\n", strings.ToUpper(field.Name))
 		contents += ignoreDeprecationWarningIfNeeded(tabtabtabtab, field.Annotations)
-		contents += fmt.Sprintf(tabtabtabtab+"return this.%s%s;\n", toFieldName(field.Name), g.generateInitValue(field))
+		contents += fmt.Sprintf(tabtabtabtab+"return this.%s;\n", toFieldName(field.Name))
 	}
 	contents += tabtabtab + "default:\n"
 	contents += tabtabtabtab + "throw ArgumentError(\"Field $fieldID doesn't exist!\");\n"

@@ -155,10 +155,10 @@ class buyAlbum_args implements thrift.TBase {
     this._aSIN = aSIN;
   }
 
-  bool isSetASIN() => this.aSIN != null;
+  bool isSetASIN() => this._aSIN != null;
 
   unsetASIN() {
-    this.aSIN = null;
+    this._aSIN = null;
   }
 
   String get acct => this._acct;
@@ -167,10 +167,10 @@ class buyAlbum_args implements thrift.TBase {
     this._acct = acct;
   }
 
-  bool isSetAcct() => this.acct != null;
+  bool isSetAcct() => this._acct != null;
 
   unsetAcct() {
-    this.acct = null;
+    this._acct = null;
   }
 
   @override
@@ -251,7 +251,6 @@ class buyAlbum_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -325,8 +324,6 @@ class buyAlbum_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -349,10 +346,10 @@ class buyAlbum_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   t_v1_music.PurchasingError get error => this._error;
@@ -361,10 +358,10 @@ class buyAlbum_result implements thrift.TBase {
     this._error = error;
   }
 
-  bool isSetError() => this.error != null;
+  bool isSetError() => this._error != null;
 
   unsetError() {
-    this.error = null;
+    this._error = null;
   }
 
   @override
@@ -447,7 +444,6 @@ class buyAlbum_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -525,8 +521,6 @@ class buyAlbum_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -549,10 +543,10 @@ class enterAlbumGiveaway_args implements thrift.TBase {
     this._email = email;
   }
 
-  bool isSetEmail() => this.email != null;
+  bool isSetEmail() => this._email != null;
 
   unsetEmail() {
-    this.email = null;
+    this._email = null;
   }
 
   String get name => this._name;
@@ -561,10 +555,10 @@ class enterAlbumGiveaway_args implements thrift.TBase {
     this._name = name;
   }
 
-  bool isSetName() => this.name != null;
+  bool isSetName() => this._name != null;
 
   unsetName() {
-    this.name = null;
+    this._name = null;
   }
 
   @override
@@ -645,7 +639,6 @@ class enterAlbumGiveaway_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -719,8 +712,6 @@ class enterAlbumGiveaway_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -731,7 +722,6 @@ class enterAlbumGiveaway_result implements thrift.TBase {
   bool _success;
   static const int SUCCESS = 0;
 
-  bool __isset_success = false;
 
   enterAlbumGiveaway_result();
 
@@ -739,13 +729,12 @@ class enterAlbumGiveaway_result implements thrift.TBase {
 
   set success(bool success) {
     this._success = success;
-    this.__isset_success = true;
   }
 
-  bool isSetSuccess() => this.__isset_success;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.__isset_success = false;
+    this._success = null;
   }
 
   @override
@@ -795,7 +784,6 @@ class enterAlbumGiveaway_result implements thrift.TBase {
         case SUCCESS:
           if (field.type == thrift.TType.BOOL) {
             this.success = iprot.readBool();
-            this.__isset_success = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -808,7 +796,6 @@ class enterAlbumGiveaway_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -863,7 +850,5 @@ class enterAlbumGiveaway_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

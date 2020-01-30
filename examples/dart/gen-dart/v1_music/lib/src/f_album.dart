@@ -19,12 +19,11 @@ class Album implements thrift.TBase {
 
   List<t_v1_music.Track> _tracks;
   static const int TRACKS = 1;
-  double _duration = 0.0;
+  double _duration;
   static const int DURATION = 2;
   String _aSIN;
   static const int ASIN = 3;
 
-  bool __isset_duration = false;
 
   Album();
 
@@ -34,23 +33,22 @@ class Album implements thrift.TBase {
     this._tracks = tracks;
   }
 
-  bool isSetTracks() => this.tracks != null;
+  bool isSetTracks() => this._tracks != null;
 
   unsetTracks() {
-    this.tracks = null;
+    this._tracks = null;
   }
 
-  double get duration => this._duration;
+  double get duration => this._duration ?? 0.0;
 
   set duration(double duration) {
     this._duration = duration;
-    this.__isset_duration = true;
   }
 
-  bool isSetDuration() => this.__isset_duration;
+  bool isSetDuration() => this._duration != null;
 
   unsetDuration() {
-    this.__isset_duration = false;
+    this._duration = null;
   }
 
   String get aSIN => this._aSIN;
@@ -59,10 +57,10 @@ class Album implements thrift.TBase {
     this._aSIN = aSIN;
   }
 
-  bool isSetASIN() => this.aSIN != null;
+  bool isSetASIN() => this._aSIN != null;
 
   unsetASIN() {
-    this.aSIN = null;
+    this._aSIN = null;
   }
 
   @override
@@ -150,7 +148,6 @@ class Album implements thrift.TBase {
         case DURATION:
           if (field.type == thrift.TType.DOUBLE) {
             this.duration = iprot.readDouble();
-            this.__isset_duration = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -170,7 +167,6 @@ class Album implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -259,7 +255,5 @@ class Album implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

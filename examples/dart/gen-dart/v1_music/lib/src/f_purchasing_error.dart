@@ -18,10 +18,9 @@ class PurchasingError extends Error implements thrift.TBase {
 
   String _message;
   static const int MESSAGE = 1;
-  int _error_code = 0;
+  int _error_code;
   static const int ERROR_CODE = 2;
 
-  bool __isset_error_code = false;
 
   PurchasingError();
 
@@ -31,23 +30,22 @@ class PurchasingError extends Error implements thrift.TBase {
     this._message = message;
   }
 
-  bool isSetMessage() => this.message != null;
+  bool isSetMessage() => this._message != null;
 
   unsetMessage() {
-    this.message = null;
+    this._message = null;
   }
 
-  int get error_code => this._error_code;
+  int get error_code => this._error_code ?? 0;
 
   set error_code(int error_code) {
     this._error_code = error_code;
-    this.__isset_error_code = true;
   }
 
-  bool isSetError_code() => this.__isset_error_code;
+  bool isSetError_code() => this._error_code != null;
 
   unsetError_code() {
-    this.__isset_error_code = false;
+    this._error_code = null;
   }
 
   @override
@@ -116,7 +114,6 @@ class PurchasingError extends Error implements thrift.TBase {
         case ERROR_CODE:
           if (field.type == thrift.TType.I16) {
             this.error_code = iprot.readI16();
-            this.__isset_error_code = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -129,7 +126,6 @@ class PurchasingError extends Error implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -197,7 +193,5 @@ class PurchasingError extends Error implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
