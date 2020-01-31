@@ -8,7 +8,7 @@ import 'dart:typed_data' show Uint8List;
 import 'package:collection/collection.dart';
 import 'package:thrift/thrift.dart' as thrift;
 import 'package:include_vendor/include_vendor.dart' as t_include_vendor;
-import 'package:some_vendored_place/vendor_namespace.dart' as t_vendor_namespace;
+import 'package:vendor_namespace/vendor_namespace.dart' as t_vendor_namespace;
 import 'package:excepts/excepts.dart' as t_excepts;
 
 class VendoredReferences implements thrift.TBase {
@@ -22,8 +22,6 @@ class VendoredReferences implements thrift.TBase {
   int _reference_vendored_enum;
   static const int REFERENCE_VENDORED_ENUM = 2;
 
-  bool __isset_reference_vendored_const = false;
-  bool __isset_reference_vendored_enum = false;
 
   VendoredReferences() {
     this._reference_vendored_const = t_vendor_namespace.VendorNamespaceConstants.a_const;
@@ -34,13 +32,12 @@ class VendoredReferences implements thrift.TBase {
 
   set reference_vendored_const(int reference_vendored_const) {
     this._reference_vendored_const = reference_vendored_const;
-    this.__isset_reference_vendored_const = true;
   }
 
-  bool isSetReference_vendored_const() => this.__isset_reference_vendored_const;
+  bool isSetReference_vendored_const() => this._reference_vendored_const != null;
 
   unsetReference_vendored_const() {
-    this.__isset_reference_vendored_const = false;
+    this._reference_vendored_const = null;
   }
 
   /// [t_vendor_namespace.MyEnum]
@@ -49,13 +46,12 @@ class VendoredReferences implements thrift.TBase {
   /// [t_vendor_namespace.MyEnum]
   set reference_vendored_enum(int reference_vendored_enum) {
     this._reference_vendored_enum = reference_vendored_enum;
-    this.__isset_reference_vendored_enum = true;
   }
 
-  bool isSetReference_vendored_enum() => this.__isset_reference_vendored_enum;
+  bool isSetReference_vendored_enum() => this._reference_vendored_enum != null;
 
   unsetReference_vendored_enum() {
-    this.__isset_reference_vendored_enum = false;
+    this._reference_vendored_enum = null;
   }
 
   @override
@@ -117,7 +113,6 @@ class VendoredReferences implements thrift.TBase {
         case REFERENCE_VENDORED_CONST:
           if (field.type == thrift.TType.I32) {
             this.reference_vendored_const = iprot.readI32();
-            this.__isset_reference_vendored_const = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -125,7 +120,6 @@ class VendoredReferences implements thrift.TBase {
         case REFERENCE_VENDORED_ENUM:
           if (field.type == thrift.TType.I32) {
             this.reference_vendored_enum = iprot.readI32();
-            this.__isset_reference_vendored_enum = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -138,7 +132,6 @@ class VendoredReferences implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -216,7 +209,6 @@ class VendoredReferences implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
     // check that fields of type enum have valid values
     if (isSetReference_vendored_enum() && !t_vendor_namespace.MyEnum.VALID_VALUES.contains(this.reference_vendored_enum)) {
       throw thrift.TProtocolError(thrift.TProtocolErrorType.INVALID_DATA, "The field 'reference_vendored_enum' has been assigned the invalid value ${this.reference_vendored_enum}");

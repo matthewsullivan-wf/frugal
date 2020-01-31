@@ -602,7 +602,6 @@ class Ping_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -640,8 +639,6 @@ class Ping_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -692,7 +689,6 @@ class Ping_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -730,8 +726,6 @@ class Ping_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -741,28 +735,26 @@ class blah_args implements thrift.TBase {
   static final thrift.TField _STR_FIELD_DESC = thrift.TField('Str', thrift.TType.STRING, 2);
   static final thrift.TField _EVENT_FIELD_DESC = thrift.TField('event', thrift.TType.STRUCT, 3);
 
-  int _num = 0;
+  int _num;
   static const int NUM = 1;
   String _str;
   static const int STR = 2;
   t_variety.Event _event;
   static const int EVENT = 3;
 
-  bool __isset_num = false;
 
   blah_args();
 
-  int get num => this._num;
+  int get num => this._num ?? 0;
 
   set num(int num) {
     this._num = num;
-    this.__isset_num = true;
   }
 
-  bool isSetNum() => this.__isset_num;
+  bool isSetNum() => this._num != null;
 
   unsetNum() {
-    this.__isset_num = false;
+    this._num = null;
   }
 
   String get str => this._str;
@@ -771,10 +763,10 @@ class blah_args implements thrift.TBase {
     this._str = str;
   }
 
-  bool isSetStr() => this.str != null;
+  bool isSetStr() => this._str != null;
 
   unsetStr() {
-    this.str = null;
+    this._str = null;
   }
 
   t_variety.Event get event => this._event;
@@ -783,10 +775,10 @@ class blah_args implements thrift.TBase {
     this._event = event;
   }
 
-  bool isSetEvent() => this.event != null;
+  bool isSetEvent() => this._event != null;
 
   unsetEvent() {
-    this.event = null;
+    this._event = null;
   }
 
   @override
@@ -860,7 +852,6 @@ class blah_args implements thrift.TBase {
         case NUM:
           if (field.type == thrift.TType.I32) {
             this.num = iprot.readI32();
-            this.__isset_num = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -888,7 +879,6 @@ class blah_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -973,8 +963,6 @@ class blah_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -991,7 +979,6 @@ class blah_result implements thrift.TBase {
   t_actual_base_dart.api_exception _api;
   static const int API = 2;
 
-  bool __isset_success = false;
 
   blah_result();
 
@@ -999,13 +986,12 @@ class blah_result implements thrift.TBase {
 
   set success(int success) {
     this._success = success;
-    this.__isset_success = true;
   }
 
-  bool isSetSuccess() => this.__isset_success;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.__isset_success = false;
+    this._success = null;
   }
 
   t_variety.AwesomeException get awe => this._awe;
@@ -1014,10 +1000,10 @@ class blah_result implements thrift.TBase {
     this._awe = awe;
   }
 
-  bool isSetAwe() => this.awe != null;
+  bool isSetAwe() => this._awe != null;
 
   unsetAwe() {
-    this.awe = null;
+    this._awe = null;
   }
 
   t_actual_base_dart.api_exception get api => this._api;
@@ -1026,10 +1012,10 @@ class blah_result implements thrift.TBase {
     this._api = api;
   }
 
-  bool isSetApi() => this.api != null;
+  bool isSetApi() => this._api != null;
 
   unsetApi() {
-    this.api = null;
+    this._api = null;
   }
 
   @override
@@ -1103,7 +1089,6 @@ class blah_result implements thrift.TBase {
         case SUCCESS:
           if (field.type == thrift.TType.I64) {
             this.success = iprot.readI64();
-            this.__isset_success = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -1132,7 +1117,6 @@ class blah_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -1225,8 +1209,6 @@ class blah_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -1235,26 +1217,24 @@ class oneWay_args implements thrift.TBase {
   static final thrift.TField _ID_FIELD_DESC = thrift.TField('id', thrift.TType.I64, 1);
   static final thrift.TField _REQ_FIELD_DESC = thrift.TField('req', thrift.TType.MAP, 2);
 
-  int _id = 0;
+  int _id;
   static const int ID = 1;
   Map<int, String> _req;
   static const int REQ = 2;
 
-  bool __isset_id = false;
 
   oneWay_args();
 
-  int get id => this._id;
+  int get id => this._id ?? 0;
 
   set id(int id) {
     this._id = id;
-    this.__isset_id = true;
   }
 
-  bool isSetId() => this.__isset_id;
+  bool isSetId() => this._id != null;
 
   unsetId() {
-    this.__isset_id = false;
+    this._id = null;
   }
 
   Map<int, String> get req => this._req;
@@ -1263,10 +1243,10 @@ class oneWay_args implements thrift.TBase {
     this._req = req;
   }
 
-  bool isSetReq() => this.req != null;
+  bool isSetReq() => this._req != null;
 
   unsetReq() {
-    this.req = null;
+    this._req = null;
   }
 
   @override
@@ -1328,7 +1308,6 @@ class oneWay_args implements thrift.TBase {
         case ID:
           if (field.type == thrift.TType.I64) {
             this.id = iprot.readI64();
-            this.__isset_id = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -1355,7 +1334,6 @@ class oneWay_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -1428,8 +1406,6 @@ class oneWay_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -1452,10 +1428,10 @@ class bin_method_args implements thrift.TBase {
     this._bin = bin;
   }
 
-  bool isSetBin() => this.bin != null;
+  bool isSetBin() => this._bin != null;
 
   unsetBin() {
-    this.bin = null;
+    this._bin = null;
   }
 
   String get str => this._str;
@@ -1464,10 +1440,10 @@ class bin_method_args implements thrift.TBase {
     this._str = str;
   }
 
-  bool isSetStr() => this.str != null;
+  bool isSetStr() => this._str != null;
 
   unsetStr() {
-    this.str = null;
+    this._str = null;
   }
 
   @override
@@ -1548,7 +1524,6 @@ class bin_method_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -1622,8 +1597,6 @@ class bin_method_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -1646,10 +1619,10 @@ class bin_method_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   t_actual_base_dart.api_exception get api => this._api;
@@ -1658,10 +1631,10 @@ class bin_method_result implements thrift.TBase {
     this._api = api;
   }
 
-  bool isSetApi() => this.api != null;
+  bool isSetApi() => this._api != null;
 
   unsetApi() {
-    this.api = null;
+    this._api = null;
   }
 
   @override
@@ -1743,7 +1716,6 @@ class bin_method_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -1821,8 +1793,6 @@ class bin_method_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -1832,56 +1802,50 @@ class param_modifiers_args implements thrift.TBase {
   static final thrift.TField _DEFAULT_NUM_FIELD_DESC = thrift.TField('default_num', thrift.TType.I32, 2);
   static final thrift.TField _REQ_NUM_FIELD_DESC = thrift.TField('req_num', thrift.TType.I32, 3);
 
-  int _opt_num = 0;
+  int _opt_num;
   static const int OPT_NUM = 1;
-  int _default_num = 0;
+  int _default_num;
   static const int DEFAULT_NUM = 2;
-  int _req_num = 0;
+  int _req_num;
   static const int REQ_NUM = 3;
 
-  bool __isset_opt_num = false;
-  bool __isset_default_num = false;
-  bool __isset_req_num = false;
 
   param_modifiers_args();
 
-  int get opt_num => this._opt_num;
+  int get opt_num => this._opt_num ?? 0;
 
   set opt_num(int opt_num) {
     this._opt_num = opt_num;
-    this.__isset_opt_num = true;
   }
 
-  bool isSetOpt_num() => this.__isset_opt_num;
+  bool isSetOpt_num() => this._opt_num != null;
 
   unsetOpt_num() {
-    this.__isset_opt_num = false;
+    this._opt_num = null;
   }
 
-  int get default_num => this._default_num;
+  int get default_num => this._default_num ?? 0;
 
   set default_num(int default_num) {
     this._default_num = default_num;
-    this.__isset_default_num = true;
   }
 
-  bool isSetDefault_num() => this.__isset_default_num;
+  bool isSetDefault_num() => this._default_num != null;
 
   unsetDefault_num() {
-    this.__isset_default_num = false;
+    this._default_num = null;
   }
 
-  int get req_num => this._req_num;
+  int get req_num => this._req_num ?? 0;
 
   set req_num(int req_num) {
     this._req_num = req_num;
-    this.__isset_req_num = true;
   }
 
-  bool isSetReq_num() => this.__isset_req_num;
+  bool isSetReq_num() => this._req_num != null;
 
   unsetReq_num() {
-    this.__isset_req_num = false;
+    this._req_num = null;
   }
 
   @override
@@ -1955,7 +1919,6 @@ class param_modifiers_args implements thrift.TBase {
         case OPT_NUM:
           if (field.type == thrift.TType.I32) {
             this.opt_num = iprot.readI32();
-            this.__isset_opt_num = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -1963,7 +1926,6 @@ class param_modifiers_args implements thrift.TBase {
         case DEFAULT_NUM:
           if (field.type == thrift.TType.I32) {
             this.default_num = iprot.readI32();
-            this.__isset_default_num = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -1971,7 +1933,6 @@ class param_modifiers_args implements thrift.TBase {
         case REQ_NUM:
           if (field.type == thrift.TType.I32) {
             this.req_num = iprot.readI32();
-            this.__isset_req_num = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -1985,7 +1946,7 @@ class param_modifiers_args implements thrift.TBase {
     iprot.readStructEnd();
 
     // check for required fields of primitive type, which can't be checked in the validate method
-    if (!__isset_req_num) {
+    if (_req_num == null) {
       throw thrift.TProtocolError(thrift.TProtocolErrorType.UNKNOWN, "Required field 'req_num' is not present in struct 'param_modifiers_args'");
     }
     validate();
@@ -2061,7 +2022,6 @@ class param_modifiers_args implements thrift.TBase {
 
   validate() {
     // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2072,7 +2032,6 @@ class param_modifiers_result implements thrift.TBase {
   int _success;
   static const int SUCCESS = 0;
 
-  bool __isset_success = false;
 
   param_modifiers_result();
 
@@ -2080,13 +2039,12 @@ class param_modifiers_result implements thrift.TBase {
 
   set success(int success) {
     this._success = success;
-    this.__isset_success = true;
   }
 
-  bool isSetSuccess() => this.__isset_success;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.__isset_success = false;
+    this._success = null;
   }
 
   @override
@@ -2136,7 +2094,6 @@ class param_modifiers_result implements thrift.TBase {
         case SUCCESS:
           if (field.type == thrift.TType.I64) {
             this.success = iprot.readI64();
-            this.__isset_success = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -2149,7 +2106,6 @@ class param_modifiers_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -2204,8 +2160,6 @@ class param_modifiers_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2228,10 +2182,10 @@ class underlying_types_test_args implements thrift.TBase {
     this._list_type = list_type;
   }
 
-  bool isSetList_type() => this.list_type != null;
+  bool isSetList_type() => this._list_type != null;
 
   unsetList_type() {
-    this.list_type = null;
+    this._list_type = null;
   }
 
   Set<int> get set_type => this._set_type;
@@ -2240,10 +2194,10 @@ class underlying_types_test_args implements thrift.TBase {
     this._set_type = set_type;
   }
 
-  bool isSetSet_type() => this.set_type != null;
+  bool isSetSet_type() => this._set_type != null;
 
   unsetSet_type() {
-    this.set_type = null;
+    this._set_type = null;
   }
 
   @override
@@ -2336,7 +2290,6 @@ class underlying_types_test_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -2418,8 +2371,6 @@ class underlying_types_test_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2439,10 +2390,10 @@ class underlying_types_test_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   @override
@@ -2510,7 +2461,6 @@ class underlying_types_test_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -2573,8 +2523,6 @@ class underlying_types_test_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2625,7 +2573,6 @@ class getThing_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -2663,8 +2610,6 @@ class getThing_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2684,10 +2629,10 @@ class getThing_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   @override
@@ -2750,7 +2695,6 @@ class getThing_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -2809,8 +2753,6 @@ class getThing_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2861,7 +2803,6 @@ class getMyInt_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -2899,8 +2840,6 @@ class getMyInt_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -2911,7 +2850,6 @@ class getMyInt_result implements thrift.TBase {
   int _success;
   static const int SUCCESS = 0;
 
-  bool __isset_success = false;
 
   getMyInt_result();
 
@@ -2919,13 +2857,12 @@ class getMyInt_result implements thrift.TBase {
 
   set success(int success) {
     this._success = success;
-    this.__isset_success = true;
   }
 
-  bool isSetSuccess() => this.__isset_success;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.__isset_success = false;
+    this._success = null;
   }
 
   @override
@@ -2975,7 +2912,6 @@ class getMyInt_result implements thrift.TBase {
         case SUCCESS:
           if (field.type == thrift.TType.I32) {
             this.success = iprot.readI32();
-            this.__isset_success = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -2988,7 +2924,6 @@ class getMyInt_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3043,8 +2978,6 @@ class getMyInt_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3064,10 +2997,10 @@ class use_subdir_struct_args implements thrift.TBase {
     this._a = a;
   }
 
-  bool isSetA() => this.a != null;
+  bool isSetA() => this._a != null;
 
   unsetA() {
-    this.a = null;
+    this._a = null;
   }
 
   @override
@@ -3130,7 +3063,6 @@ class use_subdir_struct_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3187,8 +3119,6 @@ class use_subdir_struct_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3208,10 +3138,10 @@ class use_subdir_struct_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   @override
@@ -3274,7 +3204,6 @@ class use_subdir_struct_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3333,8 +3262,6 @@ class use_subdir_struct_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3354,10 +3281,10 @@ class sayHelloWith_args implements thrift.TBase {
     this._newMessage = newMessage;
   }
 
-  bool isSetNewMessage() => this.newMessage != null;
+  bool isSetNewMessage() => this._newMessage != null;
 
   unsetNewMessage() {
-    this.newMessage = null;
+    this._newMessage = null;
   }
 
   @override
@@ -3419,7 +3346,6 @@ class sayHelloWith_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3476,8 +3402,6 @@ class sayHelloWith_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3497,10 +3421,10 @@ class sayHelloWith_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   @override
@@ -3562,7 +3486,6 @@ class sayHelloWith_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3621,8 +3544,6 @@ class sayHelloWith_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3642,10 +3563,10 @@ class whatDoYouSay_args implements thrift.TBase {
     this._messageArgs = messageArgs;
   }
 
-  bool isSetMessageArgs() => this.messageArgs != null;
+  bool isSetMessageArgs() => this._messageArgs != null;
 
   unsetMessageArgs() {
-    this.messageArgs = null;
+    this._messageArgs = null;
   }
 
   @override
@@ -3707,7 +3628,6 @@ class whatDoYouSay_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3764,8 +3684,6 @@ class whatDoYouSay_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3785,10 +3703,10 @@ class whatDoYouSay_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   @override
@@ -3850,7 +3768,6 @@ class whatDoYouSay_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -3909,8 +3826,6 @@ class whatDoYouSay_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -3930,10 +3845,10 @@ class sayAgain_args implements thrift.TBase {
     this._messageResult = messageResult;
   }
 
-  bool isSetMessageResult() => this.messageResult != null;
+  bool isSetMessageResult() => this._messageResult != null;
 
   unsetMessageResult() {
-    this.messageResult = null;
+    this._messageResult = null;
   }
 
   @override
@@ -3995,7 +3910,6 @@ class sayAgain_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -4052,8 +3966,6 @@ class sayAgain_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -4073,10 +3985,10 @@ class sayAgain_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   @override
@@ -4138,7 +4050,6 @@ class sayAgain_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -4197,7 +4108,5 @@ class sayAgain_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

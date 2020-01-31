@@ -30,10 +30,10 @@ class TestBase implements thrift.TBase {
     this._base_struct = base_struct;
   }
 
-  bool isSetBase_struct() => this.base_struct != null;
+  bool isSetBase_struct() => this._base_struct != null;
 
   unsetBase_struct() {
-    this.base_struct = null;
+    this._base_struct = null;
   }
 
   @override
@@ -96,7 +96,6 @@ class TestBase implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -153,7 +152,5 @@ class TestBase implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

@@ -36,10 +36,10 @@ class FooArgs implements thrift.TBase {
     this._newMessage = newMessage;
   }
 
-  bool isSetNewMessage() => this.newMessage != null;
+  bool isSetNewMessage() => this._newMessage != null;
 
   unsetNewMessage() {
-    this.newMessage = null;
+    this._newMessage = null;
   }
 
   String get messageArgs => this._messageArgs;
@@ -48,10 +48,10 @@ class FooArgs implements thrift.TBase {
     this._messageArgs = messageArgs;
   }
 
-  bool isSetMessageArgs() => this.messageArgs != null;
+  bool isSetMessageArgs() => this._messageArgs != null;
 
   unsetMessageArgs() {
-    this.messageArgs = null;
+    this._messageArgs = null;
   }
 
   String get messageResult => this._messageResult;
@@ -60,10 +60,10 @@ class FooArgs implements thrift.TBase {
     this._messageResult = messageResult;
   }
 
-  bool isSetMessageResult() => this.messageResult != null;
+  bool isSetMessageResult() => this._messageResult != null;
 
   unsetMessageResult() {
-    this.messageResult = null;
+    this._messageResult = null;
   }
 
   @override
@@ -163,7 +163,6 @@ class FooArgs implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -254,7 +253,5 @@ class FooArgs implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

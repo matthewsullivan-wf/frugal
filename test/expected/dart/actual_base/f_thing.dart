@@ -14,26 +14,24 @@ class thing implements thrift.TBase {
   static final thrift.TField _AN_ID_FIELD_DESC = thrift.TField('an_id', thrift.TType.I32, 1);
   static final thrift.TField _A_STRING_FIELD_DESC = thrift.TField('a_string', thrift.TType.STRING, 2);
 
-  int _an_id = 0;
+  int _an_id;
   static const int AN_ID = 1;
   String _a_string;
   static const int A_STRING = 2;
 
-  bool __isset_an_id = false;
 
   thing();
 
-  int get an_id => this._an_id;
+  int get an_id => this._an_id ?? 0;
 
   set an_id(int an_id) {
     this._an_id = an_id;
-    this.__isset_an_id = true;
   }
 
-  bool isSetAn_id() => this.__isset_an_id;
+  bool isSetAn_id() => this._an_id != null;
 
   unsetAn_id() {
-    this.__isset_an_id = false;
+    this._an_id = null;
   }
 
   String get a_string => this._a_string;
@@ -42,10 +40,10 @@ class thing implements thrift.TBase {
     this._a_string = a_string;
   }
 
-  bool isSetA_string() => this.a_string != null;
+  bool isSetA_string() => this._a_string != null;
 
   unsetA_string() {
-    this.a_string = null;
+    this._a_string = null;
   }
 
   @override
@@ -107,7 +105,6 @@ class thing implements thrift.TBase {
         case AN_ID:
           if (field.type == thrift.TType.I32) {
             this.an_id = iprot.readI32();
-            this.__isset_an_id = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -127,7 +124,6 @@ class thing implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -195,7 +191,5 @@ class thing implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

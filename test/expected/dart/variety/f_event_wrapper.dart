@@ -47,7 +47,7 @@ class EventWrapper implements thrift.TBase {
   static const int NUMS = 6;
   List<int> _enums;
   static const int ENUMS = 7;
-  bool _aBoolField = false;
+  bool _aBoolField;
   static const int ABOOLFIELD = 8;
   t_variety.TestingUnions _a_union;
   static const int A_UNION = 9;
@@ -57,7 +57,7 @@ class EventWrapper implements thrift.TBase {
   /// across two lines.
   /// Deprecated: use something else
   @deprecated
-  bool _depr = false;
+  bool _depr;
   static const int DEPR = 11;
   /// Deprecated: use something else
   @deprecated
@@ -74,9 +74,6 @@ class EventWrapper implements thrift.TBase {
   Set<t_variety.Event> _eventSetDefault;
   static const int EVENTSETDEFAULT = 16;
 
-  bool __isset_iD = false;
-  bool __isset_aBoolField = false;
-  bool __isset_depr = false;
 
   EventWrapper() {
     this._eventsDefault = [
@@ -91,13 +88,12 @@ class EventWrapper implements thrift.TBase {
 
   set iD(int iD) {
     this._iD = iD;
-    this.__isset_iD = true;
   }
 
-  bool isSetID() => this.__isset_iD;
+  bool isSetID() => this._iD != null;
 
   unsetID() {
-    this.__isset_iD = false;
+    this._iD = null;
   }
 
   t_variety.Event get ev => this._ev;
@@ -106,10 +102,10 @@ class EventWrapper implements thrift.TBase {
     this._ev = ev;
   }
 
-  bool isSetEv() => this.ev != null;
+  bool isSetEv() => this._ev != null;
 
   unsetEv() {
-    this.ev = null;
+    this._ev = null;
   }
 
   List<t_variety.Event> get events => this._events;
@@ -118,10 +114,10 @@ class EventWrapper implements thrift.TBase {
     this._events = events;
   }
 
-  bool isSetEvents() => this.events != null;
+  bool isSetEvents() => this._events != null;
 
   unsetEvents() {
-    this.events = null;
+    this._events = null;
   }
 
   Set<t_variety.Event> get events2 => this._events2;
@@ -130,10 +126,10 @@ class EventWrapper implements thrift.TBase {
     this._events2 = events2;
   }
 
-  bool isSetEvents2() => this.events2 != null;
+  bool isSetEvents2() => this._events2 != null;
 
   unsetEvents2() {
-    this.events2 = null;
+    this._events2 = null;
   }
 
   Map<int, t_variety.Event> get eventMap => this._eventMap;
@@ -142,10 +138,10 @@ class EventWrapper implements thrift.TBase {
     this._eventMap = eventMap;
   }
 
-  bool isSetEventMap() => this.eventMap != null;
+  bool isSetEventMap() => this._eventMap != null;
 
   unsetEventMap() {
-    this.eventMap = null;
+    this._eventMap = null;
   }
 
   List<List<int>> get nums => this._nums;
@@ -154,10 +150,10 @@ class EventWrapper implements thrift.TBase {
     this._nums = nums;
   }
 
-  bool isSetNums() => this.nums != null;
+  bool isSetNums() => this._nums != null;
 
   unsetNums() {
-    this.nums = null;
+    this._nums = null;
   }
 
   List<int> get enums => this._enums;
@@ -166,23 +162,22 @@ class EventWrapper implements thrift.TBase {
     this._enums = enums;
   }
 
-  bool isSetEnums() => this.enums != null;
+  bool isSetEnums() => this._enums != null;
 
   unsetEnums() {
-    this.enums = null;
+    this._enums = null;
   }
 
-  bool get aBoolField => this._aBoolField;
+  bool get aBoolField => this._aBoolField ?? false;
 
   set aBoolField(bool aBoolField) {
     this._aBoolField = aBoolField;
-    this.__isset_aBoolField = true;
   }
 
-  bool isSetABoolField() => this.__isset_aBoolField;
+  bool isSetABoolField() => this._aBoolField != null;
 
   unsetABoolField() {
-    this.__isset_aBoolField = false;
+    this._aBoolField = null;
   }
 
   t_variety.TestingUnions get a_union => this._a_union;
@@ -191,10 +186,10 @@ class EventWrapper implements thrift.TBase {
     this._a_union = a_union;
   }
 
-  bool isSetA_union() => this.a_union != null;
+  bool isSetA_union() => this._a_union != null;
 
   unsetA_union() {
-    this.a_union = null;
+    this._a_union = null;
   }
 
   String get typedefOfTypedef => this._typedefOfTypedef;
@@ -203,17 +198,17 @@ class EventWrapper implements thrift.TBase {
     this._typedefOfTypedef = typedefOfTypedef;
   }
 
-  bool isSetTypedefOfTypedef() => this.typedefOfTypedef != null;
+  bool isSetTypedefOfTypedef() => this._typedefOfTypedef != null;
 
   unsetTypedefOfTypedef() {
-    this.typedefOfTypedef = null;
+    this._typedefOfTypedef = null;
   }
 
   /// This is a docstring comment for a deprecated field that has been spread
   /// across two lines.
   /// Deprecated: use something else
   @deprecated
-  bool get depr => this._depr;
+  bool get depr => this._depr ?? false;
 
   /// This is a docstring comment for a deprecated field that has been spread
   /// across two lines.
@@ -221,13 +216,13 @@ class EventWrapper implements thrift.TBase {
   @deprecated
   set depr(bool depr) {
     this._depr = depr;
-    this.__isset_depr = true;
   }
 
-  @deprecated  bool isSetDepr() => this.__isset_depr;
+  @deprecated  bool isSetDepr() => this._depr != null;
 
   unsetDepr() {
-    this.__isset_depr = false;
+    // ignore: deprecated_member_use
+    this._depr = null;
   }
 
   /// Deprecated: use something else
@@ -240,11 +235,11 @@ class EventWrapper implements thrift.TBase {
     this._deprBinary = deprBinary;
   }
 
-  @deprecated  bool isSetDeprBinary() => this.deprBinary != null;
+  @deprecated  bool isSetDeprBinary() => this._deprBinary != null;
 
   unsetDeprBinary() {
     // ignore: deprecated_member_use
-    this.deprBinary = null;
+    this._deprBinary = null;
   }
 
   /// Deprecated: use something else
@@ -257,11 +252,11 @@ class EventWrapper implements thrift.TBase {
     this._deprList = deprList;
   }
 
-  @deprecated  bool isSetDeprList() => this.deprList != null;
+  @deprecated  bool isSetDeprList() => this._deprList != null;
 
   unsetDeprList() {
     // ignore: deprecated_member_use
-    this.deprList = null;
+    this._deprList = null;
   }
 
   List<t_variety.Event> get eventsDefault => this._eventsDefault;
@@ -270,10 +265,10 @@ class EventWrapper implements thrift.TBase {
     this._eventsDefault = eventsDefault;
   }
 
-  bool isSetEventsDefault() => this.eventsDefault != null;
+  bool isSetEventsDefault() => this._eventsDefault != null;
 
   unsetEventsDefault() {
-    this.eventsDefault = null;
+    this._eventsDefault = null;
   }
 
   Map<int, t_variety.Event> get eventMapDefault => this._eventMapDefault;
@@ -282,10 +277,10 @@ class EventWrapper implements thrift.TBase {
     this._eventMapDefault = eventMapDefault;
   }
 
-  bool isSetEventMapDefault() => this.eventMapDefault != null;
+  bool isSetEventMapDefault() => this._eventMapDefault != null;
 
   unsetEventMapDefault() {
-    this.eventMapDefault = null;
+    this._eventMapDefault = null;
   }
 
   Set<t_variety.Event> get eventSetDefault => this._eventSetDefault;
@@ -294,10 +289,10 @@ class EventWrapper implements thrift.TBase {
     this._eventSetDefault = eventSetDefault;
   }
 
-  bool isSetEventSetDefault() => this.eventSetDefault != null;
+  bool isSetEventSetDefault() => this._eventSetDefault != null;
 
   unsetEventSetDefault() {
-    this.eventSetDefault = null;
+    this._eventSetDefault = null;
   }
 
   @override
@@ -536,7 +531,6 @@ class EventWrapper implements thrift.TBase {
         case ID:
           if (field.type == thrift.TType.I64) {
             this.iD = iprot.readI64();
-            this.__isset_iD = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -627,7 +621,6 @@ class EventWrapper implements thrift.TBase {
         case ABOOLFIELD:
           if (field.type == thrift.TType.BOOL) {
             this.aBoolField = iprot.readBool();
-            this.__isset_aBoolField = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -651,7 +644,6 @@ class EventWrapper implements thrift.TBase {
           if (field.type == thrift.TType.BOOL) {
             // ignore: deprecated_member_use
             this.depr = iprot.readBool();
-            this.__isset_depr = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -730,7 +722,6 @@ class EventWrapper implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -1102,6 +1093,5 @@ class EventWrapper implements thrift.TBase {
     if (this.ev == null) {
       throw thrift.TProtocolError(thrift.TProtocolErrorType.INVALID_DATA, "Required field 'ev' was not present in struct EventWrapper");
     }
-    // check that fields of type enum have valid values
   }
 }

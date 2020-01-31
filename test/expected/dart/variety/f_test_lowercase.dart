@@ -18,24 +18,22 @@ class TestLowercase implements thrift.TBase {
   static final thrift.TStruct _STRUCT_DESC = thrift.TStruct('TestLowercase');
   static final thrift.TField _LOWERCASE_INT_FIELD_DESC = thrift.TField('lowercaseInt', thrift.TType.I32, 1);
 
-  int _lowercaseInt = 0;
+  int _lowercaseInt;
   static const int LOWERCASEINT = 1;
 
-  bool __isset_lowercaseInt = false;
 
   TestLowercase();
 
-  int get lowercaseInt => this._lowercaseInt;
+  int get lowercaseInt => this._lowercaseInt ?? 0;
 
   set lowercaseInt(int lowercaseInt) {
     this._lowercaseInt = lowercaseInt;
-    this.__isset_lowercaseInt = true;
   }
 
-  bool isSetLowercaseInt() => this.__isset_lowercaseInt;
+  bool isSetLowercaseInt() => this._lowercaseInt != null;
 
   unsetLowercaseInt() {
-    this.__isset_lowercaseInt = false;
+    this._lowercaseInt = null;
   }
 
   @override
@@ -85,7 +83,6 @@ class TestLowercase implements thrift.TBase {
         case LOWERCASEINT:
           if (field.type == thrift.TType.I32) {
             this.lowercaseInt = iprot.readI32();
-            this.__isset_lowercaseInt = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -98,7 +95,6 @@ class TestLowercase implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -149,7 +145,5 @@ class TestLowercase implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

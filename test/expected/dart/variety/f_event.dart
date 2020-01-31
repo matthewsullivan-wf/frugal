@@ -22,31 +22,29 @@ class Event implements thrift.TBase {
   static final thrift.TField _MESSAGE_FIELD_DESC = thrift.TField('Message', thrift.TType.STRING, 2);
 
   /// ID is a unique identifier for an event.
-  int _iD = 0;
+  int _iD;
   static const int ID = 1;
   /// Message contains the event payload.
   String _message;
   static const int MESSAGE = 2;
 
-  bool __isset_iD = false;
 
   Event() {
     this._iD = t_variety.VarietyConstants.DEFAULT_ID;
   }
 
   /// ID is a unique identifier for an event.
-  int get iD => this._iD;
+  int get iD => this._iD ?? 0;
 
   /// ID is a unique identifier for an event.
   set iD(int iD) {
     this._iD = iD;
-    this.__isset_iD = true;
   }
 
-  bool isSetID() => this.__isset_iD;
+  bool isSetID() => this._iD != null;
 
   unsetID() {
-    this.__isset_iD = false;
+    this._iD = null;
   }
 
   /// Message contains the event payload.
@@ -57,10 +55,10 @@ class Event implements thrift.TBase {
     this._message = message;
   }
 
-  bool isSetMessage() => this.message != null;
+  bool isSetMessage() => this._message != null;
 
   unsetMessage() {
-    this.message = null;
+    this._message = null;
   }
 
   @override
@@ -122,7 +120,6 @@ class Event implements thrift.TBase {
         case ID:
           if (field.type == thrift.TType.I64) {
             this.iD = iprot.readI64();
-            this.__isset_iD = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -142,7 +139,6 @@ class Event implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -210,7 +206,5 @@ class Event implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }

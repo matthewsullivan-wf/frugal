@@ -41,7 +41,7 @@ class TestingDefaults implements thrift.TBase {
   static const int EV1 = 2;
   t_variety.Event _ev2;
   static const int EV2 = 3;
-  int _iD = 0;
+  int _iD;
   static const int ID = 4;
   String _thing;
   static const int THING = 5;
@@ -49,7 +49,7 @@ class TestingDefaults implements thrift.TBase {
   static const int THING2 = 6;
   List<int> _listfield;
   static const int LISTFIELD = 7;
-  int _iD3 = 0;
+  int _iD3;
   static const int ID3 = 8;
   Uint8List _bin_field;
   static const int BIN_FIELD = 9;
@@ -74,11 +74,6 @@ class TestingDefaults implements thrift.TBase {
   int _base_status;
   static const int BASE_STATUS = 18;
 
-  bool __isset_iD2 = false;
-  bool __isset_iD = false;
-  bool __isset_iD3 = false;
-  bool __isset_status = false;
-  bool __isset_base_status = false;
 
   TestingDefaults() {
     this._iD2 = t_variety.VarietyConstants.DEFAULT_ID;
@@ -125,13 +120,12 @@ class TestingDefaults implements thrift.TBase {
 
   set iD2(int iD2) {
     this._iD2 = iD2;
-    this.__isset_iD2 = true;
   }
 
-  bool isSetID2() => this.__isset_iD2;
+  bool isSetID2() => this._iD2 != null;
 
   unsetID2() {
-    this.__isset_iD2 = false;
+    this._iD2 = null;
   }
 
   t_variety.Event get ev1 => this._ev1;
@@ -140,10 +134,10 @@ class TestingDefaults implements thrift.TBase {
     this._ev1 = ev1;
   }
 
-  bool isSetEv1() => this.ev1 != null;
+  bool isSetEv1() => this._ev1 != null;
 
   unsetEv1() {
-    this.ev1 = null;
+    this._ev1 = null;
   }
 
   t_variety.Event get ev2 => this._ev2;
@@ -152,23 +146,22 @@ class TestingDefaults implements thrift.TBase {
     this._ev2 = ev2;
   }
 
-  bool isSetEv2() => this.ev2 != null;
+  bool isSetEv2() => this._ev2 != null;
 
   unsetEv2() {
-    this.ev2 = null;
+    this._ev2 = null;
   }
 
-  int get iD => this._iD;
+  int get iD => this._iD ?? 0;
 
   set iD(int iD) {
     this._iD = iD;
-    this.__isset_iD = true;
   }
 
-  bool isSetID() => this.__isset_iD;
+  bool isSetID() => this._iD != null;
 
   unsetID() {
-    this.__isset_iD = false;
+    this._iD = null;
   }
 
   String get thing => this._thing;
@@ -177,10 +170,10 @@ class TestingDefaults implements thrift.TBase {
     this._thing = thing;
   }
 
-  bool isSetThing() => this.thing != null;
+  bool isSetThing() => this._thing != null;
 
   unsetThing() {
-    this.thing = null;
+    this._thing = null;
   }
 
   String get thing2 => this._thing2;
@@ -189,10 +182,10 @@ class TestingDefaults implements thrift.TBase {
     this._thing2 = thing2;
   }
 
-  bool isSetThing2() => this.thing2 != null;
+  bool isSetThing2() => this._thing2 != null;
 
   unsetThing2() {
-    this.thing2 = null;
+    this._thing2 = null;
   }
 
   List<int> get listfield => this._listfield;
@@ -201,23 +194,22 @@ class TestingDefaults implements thrift.TBase {
     this._listfield = listfield;
   }
 
-  bool isSetListfield() => this.listfield != null;
+  bool isSetListfield() => this._listfield != null;
 
   unsetListfield() {
-    this.listfield = null;
+    this._listfield = null;
   }
 
-  int get iD3 => this._iD3;
+  int get iD3 => this._iD3 ?? 0;
 
   set iD3(int iD3) {
     this._iD3 = iD3;
-    this.__isset_iD3 = true;
   }
 
-  bool isSetID3() => this.__isset_iD3;
+  bool isSetID3() => this._iD3 != null;
 
   unsetID3() {
-    this.__isset_iD3 = false;
+    this._iD3 = null;
   }
 
   Uint8List get bin_field => this._bin_field;
@@ -226,10 +218,10 @@ class TestingDefaults implements thrift.TBase {
     this._bin_field = bin_field;
   }
 
-  bool isSetBin_field() => this.bin_field != null;
+  bool isSetBin_field() => this._bin_field != null;
 
   unsetBin_field() {
-    this.bin_field = null;
+    this._bin_field = null;
   }
 
   Uint8List get bin_field2 => this._bin_field2;
@@ -238,10 +230,10 @@ class TestingDefaults implements thrift.TBase {
     this._bin_field2 = bin_field2;
   }
 
-  bool isSetBin_field2() => this.bin_field2 != null;
+  bool isSetBin_field2() => this._bin_field2 != null;
 
   unsetBin_field2() {
-    this.bin_field2 = null;
+    this._bin_field2 = null;
   }
 
   Uint8List get bin_field3 => this._bin_field3;
@@ -250,10 +242,10 @@ class TestingDefaults implements thrift.TBase {
     this._bin_field3 = bin_field3;
   }
 
-  bool isSetBin_field3() => this.bin_field3 != null;
+  bool isSetBin_field3() => this._bin_field3 != null;
 
   unsetBin_field3() {
-    this.bin_field3 = null;
+    this._bin_field3 = null;
   }
 
   Uint8List get bin_field4 => this._bin_field4;
@@ -262,10 +254,10 @@ class TestingDefaults implements thrift.TBase {
     this._bin_field4 = bin_field4;
   }
 
-  bool isSetBin_field4() => this.bin_field4 != null;
+  bool isSetBin_field4() => this._bin_field4 != null;
 
   unsetBin_field4() {
-    this.bin_field4 = null;
+    this._bin_field4 = null;
   }
 
   List<int> get list2 => this._list2;
@@ -274,10 +266,10 @@ class TestingDefaults implements thrift.TBase {
     this._list2 = list2;
   }
 
-  bool isSetList2() => this.list2 != null;
+  bool isSetList2() => this._list2 != null;
 
   unsetList2() {
-    this.list2 = null;
+    this._list2 = null;
   }
 
   List<int> get list3 => this._list3;
@@ -286,10 +278,10 @@ class TestingDefaults implements thrift.TBase {
     this._list3 = list3;
   }
 
-  bool isSetList3() => this.list3 != null;
+  bool isSetList3() => this._list3 != null;
 
   unsetList3() {
-    this.list3 = null;
+    this._list3 = null;
   }
 
   List<int> get list4 => this._list4;
@@ -298,10 +290,10 @@ class TestingDefaults implements thrift.TBase {
     this._list4 = list4;
   }
 
-  bool isSetList4() => this.list4 != null;
+  bool isSetList4() => this._list4 != null;
 
   unsetList4() {
-    this.list4 = null;
+    this._list4 = null;
   }
 
   Map<String, String> get a_map => this._a_map;
@@ -310,10 +302,10 @@ class TestingDefaults implements thrift.TBase {
     this._a_map = a_map;
   }
 
-  bool isSetA_map() => this.a_map != null;
+  bool isSetA_map() => this._a_map != null;
 
   unsetA_map() {
-    this.a_map = null;
+    this._a_map = null;
   }
 
   /// [t_variety.HealthCondition] Comment for enum field.
@@ -322,13 +314,12 @@ class TestingDefaults implements thrift.TBase {
   /// [t_variety.HealthCondition] Comment for enum field.
   set status(int status) {
     this._status = status;
-    this.__isset_status = true;
   }
 
-  bool isSetStatus() => this.__isset_status;
+  bool isSetStatus() => this._status != null;
 
   unsetStatus() {
-    this.__isset_status = false;
+    this._status = null;
   }
 
   /// [t_actual_base_dart.base_health_condition]
@@ -337,13 +328,12 @@ class TestingDefaults implements thrift.TBase {
   /// [t_actual_base_dart.base_health_condition]
   set base_status(int base_status) {
     this._base_status = base_status;
-    this.__isset_base_status = true;
   }
 
-  bool isSetBase_status() => this.__isset_base_status;
+  bool isSetBase_status() => this._base_status != null;
 
   unsetBase_status() {
-    this.__isset_base_status = false;
+    this._base_status = null;
   }
 
   @override
@@ -597,7 +587,6 @@ class TestingDefaults implements thrift.TBase {
         case ID2:
           if (field.type == thrift.TType.I64) {
             this.iD2 = iprot.readI64();
-            this.__isset_iD2 = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -621,7 +610,6 @@ class TestingDefaults implements thrift.TBase {
         case ID:
           if (field.type == thrift.TType.I64) {
             this.iD = iprot.readI64();
-            this.__isset_iD = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -656,7 +644,6 @@ class TestingDefaults implements thrift.TBase {
         case ID3:
           if (field.type == thrift.TType.I64) {
             this.iD3 = iprot.readI64();
-            this.__isset_iD3 = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -745,7 +732,6 @@ class TestingDefaults implements thrift.TBase {
         case STATUS:
           if (field.type == thrift.TType.I32) {
             this.status = iprot.readI32();
-            this.__isset_status = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -753,7 +739,6 @@ class TestingDefaults implements thrift.TBase {
         case BASE_STATUS:
           if (field.type == thrift.TType.I32) {
             this.base_status = iprot.readI32();
-            this.__isset_base_status = true;
           } else {
             thrift.TProtocolUtil.skip(iprot, field.type);
           }
@@ -767,10 +752,10 @@ class TestingDefaults implements thrift.TBase {
     iprot.readStructEnd();
 
     // check for required fields of primitive type, which can't be checked in the validate method
-    if (!__isset_status) {
+    if (_status == null) {
       throw thrift.TProtocolError(thrift.TProtocolErrorType.UNKNOWN, "Required field 'status' is not present in struct 'TestingDefaults'");
     }
-    if (!__isset_base_status) {
+    if (_base_status == null) {
       throw thrift.TProtocolError(thrift.TProtocolErrorType.UNKNOWN, "Required field 'base_status' is not present in struct 'TestingDefaults'");
     }
     validate();

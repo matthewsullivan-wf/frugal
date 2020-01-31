@@ -13,7 +13,7 @@ import 'package:logging/logging.dart' as logging;
 import 'package:thrift/thrift.dart' as thrift;
 import 'package:frugal/frugal.dart' as frugal;
 
-import 'package:some_vendored_place/vendor_namespace.dart' as t_vendor_namespace;
+import 'package:vendor_namespace/vendor_namespace.dart' as t_vendor_namespace;
 import 'package:excepts/excepts.dart' as t_excepts;
 import 'package:include_vendor/include_vendor.dart' as t_include_vendor;
 
@@ -131,7 +131,6 @@ class getItem_args implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -169,8 +168,6 @@ class getItem_args implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
 // ignore: camel_case_types
@@ -193,10 +190,10 @@ class getItem_result implements thrift.TBase {
     this._success = success;
   }
 
-  bool isSetSuccess() => this.success != null;
+  bool isSetSuccess() => this._success != null;
 
   unsetSuccess() {
-    this.success = null;
+    this._success = null;
   }
 
   t_excepts.InvalidData get d => this._d;
@@ -205,10 +202,10 @@ class getItem_result implements thrift.TBase {
     this._d = d;
   }
 
-  bool isSetD() => this.d != null;
+  bool isSetD() => this._d != null;
 
   unsetD() {
-    this.d = null;
+    this._d = null;
   }
 
   @override
@@ -291,7 +288,6 @@ class getItem_result implements thrift.TBase {
     }
     iprot.readStructEnd();
 
-    // check for required fields of primitive type, which can't be checked in the validate method
     validate();
   }
 
@@ -369,7 +365,5 @@ class getItem_result implements thrift.TBase {
   }
 
   validate() {
-    // check for required fields
-    // check that fields of type enum have valid values
   }
 }
